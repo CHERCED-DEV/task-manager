@@ -2,11 +2,8 @@ import { ImgConfig } from "@/pages/api/ui_static/db/ui_static.utils";
 import { UseFormReturn } from "react-hook-form";
 
 // props handlers
-export interface SignUpDataProps {
-  sign_up: AccountManagerConfig;
-}
-export interface LoginDataProps {
-  Login: AccountManagerConfig;
+export interface AccountManagerDataProps {
+  data: AccountManagerConfig;
 }
 export interface AccountManagerConfig {
   title: string;

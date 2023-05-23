@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { LoginManager, SignUp } from './utils/Helpers';
 import { AccountManagerDataProps } from './utils/account.manager.interface';
+import { AccountForm } from './utils/AccountForm';
 
 
 export const AccountManager: React.FC<AccountManagerDataProps> = ({ account_mannager }) => {
@@ -31,12 +31,11 @@ export const AccountManager: React.FC<AccountManagerDataProps> = ({ account_mann
                             />
                             <h1 className="AccountManager-intro__title">{account_mannager.welcome.title}</h1>
                         </div>
-
                     </>
                 ) : (
                     <>
-                        {fromToggle === "SignUp" && <SignUp sign_up={account_mannager.sign_up} />}
-                        {fromToggle === "Login" && <LoginManager Login={account_mannager.login} />}
+                        {fromToggle === "Sign up" && <AccountForm key={account_mannager.sign_up.title} data={account_mannager.sign_up} />}
+                        {fromToggle === "Login" && <AccountForm data={account_mannager.login} />}
                     </>
                 )
             }
